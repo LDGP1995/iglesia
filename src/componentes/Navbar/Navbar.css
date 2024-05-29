@@ -41,7 +41,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #052044;
+  background-color: #a8c3e7;
   border-radius: 0.5rem;
 }
 
@@ -74,7 +74,7 @@ img:hover {
   cursor: pointer;
 }
 
-@media (max-width: 910px) {
+@media (max-width: 970px) {
   .navbar {
     height: 60px;
   }
@@ -113,4 +113,16 @@ img:hover {
     padding: 0 10px;
   }
 
+}
+
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.active-link {
+  color: white;
+  /* text-decoration: underline; */
+  padding: 10px;
 }
