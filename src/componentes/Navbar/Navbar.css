@@ -1,46 +1,128 @@
-:root{
-    --BlackFont: black;
-    --ColorNav: white;
-    --ColorBlue: #0769e9;
+:root {
+  --BlackFont: black;
+  --ColorNav: white;
+  --ColorBlue: #0769e9;
 }
 
-.logo{
-    text-decoration: none;
-    font-size: 30px;
-    color: var(--ColorNav);
-    margin: 20px;
+.logo {
+  text-decoration: none;
+  font-size: 30px;
+  color: var(--ColorNav);
+  font-weight: bold;
+  padding: 0 40px;
 }
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--ColorBlue);
+
+.logo:hover {
+  color: #052044;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--ColorBlue);
+  height: 80px;
+  line-height: 60px;
+  top: 0;
+  position: sticky;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--ColorNav);
+  padding: 10px;
+  margin: 20px;
+}
+
+nav ul li a:hover {
+  background-color: #a8c3e7;
+  border-radius: 0.5rem;
+}
+
+nav ul li:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+  color: #052044;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--ColorNav);
+  padding: 10px;
+  margin: 20px;
+}
+
+img {
+  height: 40px;
+  padding: 0 20px;
+}
+
+button {
+  background: none;
+  border: none;
+  display: none;
+}
+
+img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media (max-width: 970px) {
+  .navbar {
     height: 60px;
-    line-height: 60px;
-    
-}
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #052044;
+    height: calc(100% - 60px);
+    top: 60px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    overflow-y: auto;
+    /* left: 100%; */
+    transition: left 0.3s;
+  }
 
-nav ul{ 
+  button {
+    display: block;
+  }
+  nav ul.open {
     display: flex;
-    justify-content: space-between;
-    list-style: none;
-    
-}
-nav ul li a{
+  }
+
+  nav ul li {
     text-decoration: none;
     color: var(--ColorNav);
-    padding: 20px;
-    margin: 20px;
+    padding: 50px;
+    margin: 5px;
+  }
 }
 
+@media (max-width: 410px) {
+  .logo {
+    padding: 0 10px;
+  }
 
-nav ul li:hover{
-    transform: scale(1.1);
-    transition: all 0.3s;
-    color: #052044;
 }
 
-nav ul li a:hover{
-    color: #052044;
-    border-radius: 5px;
+.nav-link {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.active-link {
+  color: white;
+  /* text-decoration: underline; */
+  padding: 10px;
 }
