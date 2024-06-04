@@ -1,9 +1,10 @@
 import React from "react";
+import Img from "./menu.png"
 
 const Eventos = () => {
   return (
     <div>
-        Eventos
+        <img src={Img} />
     </div>
   ) 
 }
