@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Hamburger from "./menu.png";
 import React, { useState, useEffect } from "react";
 import Inicio from "./pages/Inicio/Inicio"; // Importa el componente Inicio
@@ -8,31 +8,32 @@ import Inicio from "./pages/Inicio/Inicio"; // Importa el componente Inicio
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("/inicio");
+  const location = useLocation();
 
   useEffect(() => {
     // Establecer la página de inicio como la activa por defecto
-    setActiveLink("/inicio");
-  }, []);
+    setActiveLink(location.pathname);
+  }, [location.pathname]);
 
   const handleLinkClick = (link) => {
-    if (link !== "/inicio") {
-      setActiveLink(link);
-    }
+    setActiveLink(link);
   };
+
 
   return (
     <div>
       <nav className="navbar">
-        <Link to="/inicio" className="logo">
+        <Link to="/" className={`logo ${activeLink === "/" ? "active-link" : "nav-link"}`}>
           Familia Cristiana
         </Link>
 
         <ul className={menuOpen ? "open" : ""}>
           <li>
             <Link
-              to="/inicio"
-              className={activeLink === "/inicio" ? "active-link" : "nav-link"}
-              onClick={() => handleLinkClick("/inicio")}
+              to="/"
+              className={activeLink === "/" ? "active-link" : "nav-link"}
+              // className={`nav-link ${activeLink === "/inicio" ? "active-link" : ""}`}
+              onClick={() => handleLinkClick("/")}
             >
               Inicio
             </Link>
@@ -85,7 +86,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {activeLink === "/inicio" && <div><Inicio /></div>}
+    {activeLink === "/" && <Inicio />}
     </div>
   );
 };
