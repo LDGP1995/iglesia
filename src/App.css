@@ -1,0 +1,168 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* ── Layout utilities ─────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 0 auto 24px;
+  border-radius: 2px;
+}
+
+.text-muted-body {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 17px;
+  color: var(--text-muted);
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* ── Section backgrounds ──────────── */
+.section-white {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.section-cream {
+  padding: 80px 0;
+  background: var(--cream);
+}
+
+.section-navy {
+  padding: 80px 0;
+  background: var(--navy);
+}
+
+.section-navy .section-title {
+  color: var(--white);
+}
+
+.section-navy .section-sub {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Interior page hero banner ────── */
+.page-hero {
+  margin-top: 80px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(212, 168, 67, 0.04) 40px,
+    rgba(212, 168, 67, 0.04) 80px
+  );
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--white);
+}
+
+.page-hero-content h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  margin-bottom: 12px;
+}
+
+.page-hero-content p {
+  font-size: 18px;
+  opacity: 0.75;
+  font-style: italic;
+}
+
+/* ── Shared buttons ───────────────── */
+.btn-primary {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 168, 67, 0.35);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .page-hero {
+    margin-top: 70px;
+    height: 220px;
+  }
+
+  .section-white,
+  .section-cream,
+  .section-navy {
+    padding: 60px 0;
+  }
+}
